@@ -1,0 +1,375 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% tungufoss Resume/CV
+% XeLaTeX Template
+% Version 1.0 (30/01/15)
+%
+% This template was based on Friggeri Resume/CV 
+% by Adrien Friggeri https://github.com/afriggeri/CV
+% and updated by Helga Ingimundardottir https://github.com/tungufoss/cv
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[]{cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+
+\addbibresource{references.bib} % Specify the bibliography file to include 
+%publications
+
+\begin{document}
+
+\header{helga}{ingimundardottir}{computational engineer} % Your name and current job title/field
+
+%-------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%-------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+\section{contact}
+%\address{Taeknigardur, \mbox{Office \#217}}{Dunhaga 5}{Reykjavik IS-107}{Iceland}
+\address{Helga Ingimundard.}{Kogunarhaed 1}{Gardabaer IS-210}{Iceland}
+~
+\mobile{(+354) 865 1341}
+%\phone{(+354) 525-4704}
+~
+\email{helga85@gmail.com}
+\homepage{https://notendur.hi.is/hei2}{www.hi.is/$\sim$hei2}
+\twitter{tungufoss}
+\github{tungufoss}
+%\facebook{helga.ingimundardottir}
+\linkedin{helgaingimundardottir}
+\section{languages}
+Icelandic mother tongue
+English fluency
+French \& Danish conversational 
+\section{programming}
+\entryaside{All-purpose}{C$\#$, C++}
+\entryaside{Numerical}{MATLAB}
+\entryaside{Parallel}{MPI}
+\entryaside{Statistical}{R}
+\entryaside{Linear}{GLPK/MathProg, Gurobi}
+\end{aside}
+
+
+\section{education}
+%-------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%-------------------------------------------------------------------------------
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2009--Present}
+{Ph.D. {\normalfont of Computational Engineering}}
+{The University of Iceland, Reykjavik}
+{Working on a doctorate on hyperheuristcs under the guidance of Prof. Tomas Philip Runarsson. The main focus of the study is on Job Shop Scheduling Problems (JSSP) and Permutation Flow Shop Problems (PFSP) and how to automate the scheduling process using e.g. ordinal regression. Moreover I'm inspecting problem difficulty and algorithm's footprints. \\
+\textbf{courses in Ph.D. programme:} 
+ethics of science and research, communication skills for doctoral students, leadership skills for doctoral students, research plans and applications writing, theoretical statistics, high performance computing A and B  \\
+\textbf{expected defence:} summer 2015.}
+%------------------------------------------------
+\entry
+{2010--2012}
+{Graduate Diploma {\normalfont of School of Education}}
+{The University of Iceland, Reykjavik}
+{Teaching Studies for Higher Education.}
+%------------------------------------------------
+\entry
+{2008--2010}
+{Masters {\normalfont of Computational Engineering}}
+{The University of Iceland, Reykjavik}
+{\emph{Detection of Fouling: Effectiveness Ratio Method} \\ 
+The dissertation investigated the possibility of using models to detect fouling in a cross-flow heat exchangers, by only using measurements that are attainable in normal operation of the heat exchanger.  The on-line detection of fouling is used by a new and more general method that also takes into account that the input can be varying. \\
+The new method finds a threshold for fouling based on the estimate of the steady states of the effectiveness, which is done by applying a wavelet transform since the transform is localised in both time and frequency. \\
+The parameters of the method need to be chosen carefully, e.g. compromise between the frequency and time localisation, thus a multiple objective genetic algorithm is implemented for the optimisation. }
+%------------------------------------------------
+\entry
+{2005--2008}
+{Bachelor {\normalfont of Mathematics}}
+{The University of Iceland, Reykjavik}
+{Specialization in Computer Science}
+%------------------------------------------------
+\end{entrylist}
+
+\section{academic experience}
+%-------------------------------------------------------------------------------
+%	ACADEMIC EXPERIENCE SECTION
+%-------------------------------------------------------------------------------
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2011-2012}
+{University of Iceland, Industrial Engineering Department}
+{Reykjavik Iceland}
+{\emph{Associate Lecturer (i. stundakennari)} in Operations Research \\
+Responsible for the under graduate course Operations Research (\href{https://ugla.hi.is/kennsluskra/index.php?sid=&tab=nam&chapter=namskeid&id=08213020110}{IDN401G}), spring semesters 2011 and 2012. \\
+During that period, I restructured the course under the guidance of Gudrun Geirsdottir at School of Education. Moreover, as a result of my efforts in innovating the course design, assessment and evaluations of tutorials, I inspired a fellow teacher in Natural Sciences, and we were awarded a teaching grant for the University for developing our methods further.
+}
+\end{entrylist}
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2007-2010}
+{University of Iceland, Industrial Engineering Department}
+{Reykjavik Iceland}
+{\emph{Assistant Teacher (i. dæmatímakennari)}, School of Engineering and Natural Sciences \\
+Worked as a tutor during tutorials, correcting and working through handouts for the following under graduate courses: 
+\begin{itemize}
+		\item Linear Algebra 		\hfill Autumn~2007
+		\item Simulations			\hfill Spring~2008
+		\item Operational Research 	\hfill Spring~2008
+		\item Calculus IB			\hfill Autumn~2009
+		\item Numerical Analysis 	\hfill Spring~2010
+\end{itemize}	
+}
+\end{entrylist}   
+
+
+
+
+
+
+
+
+
+
+
+
+\section{work experience}
+
+%-------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%-------------------------------------------------------------------------------
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2013--Now}
+{VALKA}
+{Kopavogur, Iceland}
+{\emph{Computational Engineer} in Research and Development \\
+Full time researcher at Valka, which specializes in the development and marketing of equipment and automation solutions for the fish processing industry. Valka was the recipient of the Icelandic Innovation Award 2013. \\
+Detailed achievements:
+\begin{itemize}
+\item Designed and implemented an intelligent fish portioning algorithm, based on fillet's X-ray imagery. 
+\item Generalised their fish bone detection algorithm in order to analyse more species. Fast calculations, yet sufficiently accurate, for real-world processing plants.
+\item Collaborator on three dimensional visualisation of fish bones, based on stereo-vision.
+\item Conducted and prepared reports for efficiency tests.
+\end{itemize}
+}
+%------------------------------------------------
+\entry
+{2007-2009}
+{LANDSBANKINN}
+{Reykjavik, Iceland}
+{
+\emph{Summer Intern} at Testing Department \\ Worked on making automated tests in Quick Time Professional for personal online banking. 
+\\
+\emph{Summer Intern} at Quantitative Research and Trading Support for the FX and Derivatives Sales \\ Worked on estimating the behaviour of the EUR/ISK currency cross using Support Vector Machines.
+\\
+\emph{Summer Intern} at Business Support \\ Worked on Level 1 technical support. It entailed setting up software and providing elementary technical assistance to the employees of Landsbankinn via phone or remotely accessing their computers.
+}
+%------------------------------------------------
+\end{entrylist}
+%------------------------------------------------
+\vfill
+\section{awards}
+%-------------------------------------------------------------------------------
+%	AWARDS SECTION
+%-------------------------------------------------------------------------------
+
+\begin{entrylist}
+    %------------------------------------------------
+    \entry
+    {2015}
+    {Nominated for Best Paper award}
+    {9th Int'l Conference on Learning and Intelligent Optimization}
+    {I had one of three full-paper submission nominated for Best Paper award, 
+    on my 
+        paper \emph{Evolutionary Learning of Weighted Linear Composite 
+        Dispatching 
+            Rules for Scheduling}.}
+    %------------------------------------------------
+    \entry
+    {2005}
+    {Magna cum laude}
+    {The Commercial College of Iceland, Reykavik, Iceland}
+    {Awarded for being the top third student in my final year of a 
+    Baccalaureate degree.}
+    %------------------------------------------------
+\end{entrylist}
+\clearpage
+
+\section{grants}
+%-------------------------------------------------------------------------------
+%	GRANTS SECTION
+%-------------------------------------------------------------------------------
+\begin{entrylist}
+    %------------------------------------------------
+    \entry
+    {2012}
+    {Grant for Teaching Development}
+    {Univeristy of Iceland, Kennslumálasjóður}
+    {Grant for implementing a new teaching method for tutorials in Engineering 
+    and 
+        Natural Sciences. Collaboration between Engineering faculty and Natural 
+        Sciences faculty. }
+    %------------------------------------------------
+    \entry
+    {2009-2012}
+    {Postgraduate Scholarship}
+    {University of Iceland Research Fund}
+    {Three year stipend for doctoral studies.}
+    %------------------------------------------------
+    \entry
+    {2010}
+    {Mobility grant}
+    {Fundusz Stypendialny i Szkoleniowy 
+    \href{http://www.fss.org.pl/en/about}{(FSS)}} % (e. Scholarship and 
+    %training fund between Iceland, Liechtenstein, Norway and Poland)}
+    {Mobility grant to visit Silisian University, Gliwice, Poland.}
+    %------------------------------------------------
+    \entry
+    {2009}
+    {Postgraduate Scholarship}
+    {French Embassy}
+    {Awarded to Icelandic students pursuing a Masters degree.}
+    %------------------------------------------------
+\end{entrylist}
+\vfill
+
+\section{communication skills}
+%-------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%-------------------------------------------------------------------------------
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2015}
+{Oral Presentation}
+{9th Int'l Conference on Learning and Intelligent Optimization (LION9)}
+{Presented the paper \emph{ Generating Training Data for Supervised Learning 
+Linear Composite Dispatch Rules for Scheduling}, Lille, France.}
+%------------------------------------------------
+\entry
+{2012}
+{Oral Presentation}
+{6th Int'l Conference on Learning and Intelligent Optimization (LION6)}
+{Presented the paper \emph{ Determining the Characteristic of Difficult Job 
+Shop Scheduling Instances for a Heuristic Solution Method}, Paris,  France.}
+%------------------------------------------------
+\entry
+{2011}
+{Oral Presentation}
+{11th Int'l Conference on Intelligent Systems Design and Applications (ISDA)}
+{Presented the paper  \emph{Sampling Strategies in Ordinal Regression for 
+Surrogate Assisted Evolutionary Optimization}, Cordoba, Spain.}
+%------------------------------------------------
+\entry
+{2010}
+{Oral Presentation}
+{5th Int'l Conference on Learning and Intelligent Optimization (LION5)}
+{Presented the paper \emph{Supervised Learning Linear Priority Dispatch Rules 
+for Job-Shop Scheduling}, Rome, Italy}
+%------------------------------------------------
+\entry
+{2010}
+{Invited speaker}
+{Silisian University, Gliwice, Poland}
+{In collaboration with Prof. Waldemar Grzechca at the Silisian University, I was invited to present my Ph.D. research to their faculty.}
+%------------------------------------------------
+\entry
+{2009}
+{Poster}
+{11th Int'l Conference on Heat Exchanger Fouling and Cleaning }
+{Presented the paper \emph{Detection of Fouling in a Cross-Flow Heat Exchanger 
+Using Wavelets}, Schladming, Austria.}
+%------------------------------------------------
+\entry
+{2009}
+{Presentation }
+{University of Valenciennes and Hainaut-Cambresis, Valenciennes, France}
+{As part of the collaboration with Sylvan Lalot (my M.Sc. co-advisor), I presented the research for my Masters degree in Computational Engineering
+for faculty at the ENSIAME department at UVHC.}
+%------------------------------------------------
+\end{entrylist}
+\clearpage
+
+\section{extracurricular activity}
+%-------------------------------------------------------------------------------
+%	EXTRACURRICULAR ACTIVITY SECTION
+%-------------------------------------------------------------------------------
+
+\begin{entrylist}
+    %------------------------------------------------
+    \entry{2014-Now}{Treasurer of SALKA}{Company union at Valka ehf.}{}
+    %------------------------------------------------
+    \entry{2011-2012}{Graduate student representative}{Science Committee in 
+        Engineering and Natural Sciences }{}
+    %------------------------------------------------
+    \entry{2009-2011}{Treasurer of HERON}{Student union for postgraduates in 
+    Engineering and Natural Sciences }{}
+    %------------------------------------------------
+    \entry{2011-2012}{Graduate student representative}{Science Committee in 
+    Engineering and Natural Sciences }{}
+    %------------------------------------------------
+    \entry{2009-2010}{Treasurer of BEST Reykjavik}{Reykjavik division for Board 
+    of 
+        European Students of Technology}{
+        Participated in the BEST General Assembly 2009 in Budapest, Hungary, on 
+        behalf of BEST Reykjavik. \\
+        Helped organize two BEST academic courses on technology at the 
+        University 
+        of Iceland, where we housed and entertained roughly 20 European 
+        students in 
+        engineering over a course of a week. }
+    %------------------------------------------------
+    \entry{2006-2007}{President of STIGULL}{Student union for undergraduates in 
+        Mathematics and Physics }{}
+    %------------------------------------------------
+\end{entrylist}
+
+\section{interests}
+%-------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%-------------------------------------------------------------------------------
+\textbf{professional:} heuristics, artificial intelligence, evolutionary computation, global optimisation, statistical learning, machine learning,  real world applications 
+
+\textbf{personal:} knitting, sewing, general arts and crafts, occasional French lessons, internet cats
+
+\vfill
+\section{publications}
+%-------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%-------------------------------------------------------------------------------
+{Literature available on 
+\href{https://www.researchgate.net/profile/Helga_Ingimundardottir}{\textbf{Research
+ Gate}}}
+\nocite{*}
+
+%\printbibliography[type=misc, title={asdf}, heading=subbibliography]
+
+\printbibsection{article}{article in peer-reviewed journal} % Print all articles from the bibliography
+
+\printbibsection{book}{thesis} % Print all books from the bibliography
+
+\printbibsection{inproceedings}{international peer-reviewed conferences/proceedings} % Print all articles from the bibliography
+
+
+%\begin{refsection} % This is a custom heading for those references marked as "inproceedings" but not containing "keyword=france"
+%\nocite{*}
+%\printbibliography[type=inproceedings, title={international peer-reviewed conferences/proceedings}, notkeyword={france}, heading=subbibliography]
+%\end{refsection}
+
+% This is a custom heading for those references marked as "inproceedings" and containing "keyword=france"
+\printbibliography[type=misc, title={seminars}, heading=subbibliography]
+
+%\printbibsection{report}{research reports} % Print all research reports from the bibliography
+
+%-------------------------------------------------------------------------------
+
+\end{document}
