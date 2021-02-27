@@ -33,17 +33,19 @@
 \begin{aside} % In the aside, each new line forces a line break
 \section{contact}
 %\address{Taeknigardur, \mbox{Office \#217}}{Dunhaga 5}{Reykjavik IS-107}{Iceland}
-\address{Helga Ingimundard.}{Kogunarhaed 1}{Gardabaer IS-210}{Iceland}
+\address{Helga Ingimundardóttir}{Kinnargata 6}{Gardabaer IS-210}{Iceland}
 ~
 \mobile{(+354) 865 1341}
 %\phone{(+354) 525-4704}
 ~
-\email{helga85@gmail.com}
-\homepage{https://notendur.hi.is/hei2}{www.hi.is/$\sim$hei2}
+\email{tungufoss@gmail.com}
+%\homepage{https://notendur.hi.is/hei2}{www.hi.is/$\sim$hei2}
 \twitter{tungufoss}
 \github{tungufoss}
-%\facebook{helga.ingimundardottir}
+\facebook{helga.ingimundardottir}
 \linkedin{helgaingimundardottir}
+\orcid{0000-0002-2780-3546}
+
 \section{languages}
 Icelandic mother tongue
 English fluency
@@ -51,10 +53,10 @@ French \& Danish conversational
 \section{programming}
 \entryaside{All-purpose}{C$\#$, C++}
 \entryaside{Numerical}{MATLAB}
-\entryaside{Parallel}{MPI}
-\entryaside{Statistical}{R}
-\entryaside{SQL}{Microsoft SQL Server}
-\entryaside{Linear}{GLPK/MathProg, Gurobi}
+\entryaside{Statistical}{R, tidyverse}
+\entryaside{SQL}{Microsoft SQL Server, PostgreSQL}
+\entryaside{Optimisation}{GLPK, Gurobi}
+\entryaside{Scripting}{awk, grep, sed, make}
 \end{aside}
 
 
@@ -71,8 +73,8 @@ French \& Danish conversational
 {Worked on a doctorate on hyperheuristcs under the guidance of Prof. Tomas 
 Philip Runarsson. The main focus of the study is on Job Shop Scheduling 
 Problems (JSP) and Flow Shop Problems (FSP) and how to automate the scheduling 
-process using e.g. ordinal regression. Moreover I'm inspected problem 
-difficulty and algorithm's footprints. \\
+process using e.g. ordinal regression. Moreover, I inspected "problem 
+difficulty" and "algorithm's footprints in instance space". \\
 {\boldfont courses in Ph.D. programme:} 
 ethics of science and research, communication skills for doctoral students, leadership skills for doctoral students, research plans and applications writing, theoretical statistics, high performance computing A and B  \\
 {\boldfont thesis:} entitled \emph{ALICE: Analysis \& Learning Iterative 
@@ -101,6 +103,22 @@ The parameters of the method need to be chosen carefully, e.g. compromise betwee
 %------------------------------------------------
 \end{entrylist}
 
+
+\section{interests}
+%-------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%-------------------------------------------------------------------------------
+{\boldfont professional:} heuristics, artificial intelligence, evolutionary 
+computation, global optimisation, statistical learning, machine learning, big data, automation, data visualisation and real world applications 
+
+{\boldfont personal:} knitting, sewing, general arts and crafts, horticulture,  podcasting, internet cats and Russian Blues
+
+
+
+\newpage
+\removeaside
+
+
 \section{work experience}
 
 %-------------------------------------------------------------------------------
@@ -108,9 +126,18 @@ The parameters of the method need to be chosen carefully, e.g. compromise betwee
 %-------------------------------------------------------------------------------
 
 \begin{entrylist}
+\entry
+{2016--2021}
+{deCODE Genetics}
+{Reykjavik, Iceland}
+{\emph{Research Scientist} for
+    \href{https://www.decode.com/}{deCODE}'s statistical department.\\
+    I was in charge of implementing and maintaining the Oxford Nanopore Technologies long range sequencing analysis pipeline for start of ONT sequencing at deCODE. 
+    I worked closely with the lab department in deciding the protocol from LIMS to work with the downstream analysis. Along with collaborating with the ITO in making necessary changes to our cluster and disk architecture in order to process the exuberant amount of data (roughly 6 petabyte over past three years) in an efficient manner, in terms of computational cost (cpu and gpu hours) and most importantly assuring data integrity. 
+}
 %------------------------------------------------
 \entry
-{2015--Present}
+{2015--2016}
 {AGR Dynamics}
 {Reykjavik, Iceland}
 {\emph{SQL Consultant} for
@@ -120,11 +147,9 @@ The parameters of the method need to be chosen carefully, e.g. compromise betwee
     statistical forecasting. My role for AGR 5 is on the back-end, with data 
     implementation and database maintenance.
 }    
-\end{entrylist}
-\begin{entrylist}
 %------------------------------------------------
 \entry
-{2015--Present}
+{2015}
 {RANNIS}
 {Reykjavik, Iceland}
 {\emph{Advisor} in 
@@ -170,7 +195,6 @@ in Quick Time Professional for personal on-line banking.
 \end{entrylist}
 %------------------------------------------------
 
-
 \section{academic experience}
 %-------------------------------------------------------------------------------
 %	ACADEMIC EXPERIENCE SECTION
@@ -192,8 +216,6 @@ in Quick Time Professional for personal on-line banking.
         awarded a teaching grant for the University for developing our methods 
         further.
     }
-\end{entrylist}
-\begin{entrylist}
     %------------------------------------------------
     \entry
     {2007--2010}
@@ -218,7 +240,8 @@ in Quick Time Professional for personal on-line banking.
 %	COMMUNICATION SKILLS SECTION
 %-------------------------------------------------------------------------------
 \begin{entrylist}
-%------------------------------------------------
+    \entry{2017-2020}{Podcast host, ÍSKISUR}{Alvarpið \& Storytel}{An Icelandic podcast with three friends who read all 47 books in The Legend of the Ice People series by Margit Sandemo. I curated a segment on Internet cats at the end of each episode. Originally published by Alvarpið from 2017-2018 but moved over to Storytel Iceland in March 2019.
+}%------------------------------------------------
 \entry
 {2016}
 {Oral Presentation}
@@ -261,30 +284,27 @@ for Job-Shop Scheduling}, Rome, Italy}
 {Silisian University, Gliwice, Poland}
 {In collaboration with Prof. Waldemar Grzechca at the Silisian University, I was invited to present my Ph.D. research to their faculty.}
 %------------------------------------------------
-\entry
-{2009}
-{Poster}
-{11th Int'l Conference on Heat Exchanger Fouling and Cleaning }
-{Presented the paper \emph{Detection of Fouling in a Cross-Flow Heat Exchanger 
-Using Wavelets}, Schladming, Austria.}
+%\entry
+%{2009}
+%{Poster}
+%{11th Int'l Conference on Heat Exchanger Fouling and Cleaning }
+%{Presented the paper \emph{Detection of Fouling in a Cross-Flow Heat Exchanger Using Wavelets}, Schladming, Austria.}
 %------------------------------------------------
+\end{entrylist}
+\begin{entrylist}
 \entry
 {2009}
 {Presentation }
 {University of Valenciennes and Hainaut-Cambresis, Valenciennes, France}
-{As part of the collaboration with Sylvan Lalot (my M.Sc. co-advisor), I presented the research for my Masters degree in Computational Engineering
-for faculty at the ENSIAME department at UVHC.}
+{As part of the collaboration with Sylvan Lalot, I presented the research faculty at the ENSIAME department at UVHC.}
 %------------------------------------------------
 \end{entrylist}
-
-\clearpage
 \section{grants}
 %-------------------------------------------------------------------------------
 %	GRANTS SECTION
 %-------------------------------------------------------------------------------
 \begin{entrylist}
     %------------------------------------------------
-    \vspace{-12pt}
     \entry
     {2012}
     {Grant for Teaching Development}
@@ -294,14 +314,12 @@ for faculty at the ENSIAME department at UVHC.}
         Natural Sciences. Collaboration between Engineering faculty and Natural 
         Sciences faculty. }
     %------------------------------------------------
-    \vspace{-12pt}
     \entry
     {2009-2012}
     {Postgraduate Scholarship}
     {University of Iceland Research Fund}
     {Three year stipend for doctoral studies.}
     %------------------------------------------------
-    \vspace{-12pt}
     \entry
     {2010}
     {Mobility grant}
@@ -310,7 +328,6 @@ for faculty at the ENSIAME department at UVHC.}
     %training fund between Iceland, Liechtenstein, Norway and Poland)}
     {Mobility grant to visit Silisian University, Gliwice, Poland.}
     %------------------------------------------------
-    \vspace{-12pt}
     \entry
     {2009}
     {Postgraduate Scholarship}
@@ -318,6 +335,7 @@ for faculty at the ENSIAME department at UVHC.}
     {Awarded to Icelandic students pursuing a Masters degree.}
     %------------------------------------------------
 \end{entrylist}
+
 \section{awards}
 %-------------------------------------------------------------------------------
 %	AWARDS SECTION
@@ -347,56 +365,34 @@ for faculty at the ENSIAME department at UVHC.}
 %-------------------------------------------------------------------------------
 %	EXTRACURRICULAR ACTIVITY SECTION
 %-------------------------------------------------------------------------------
-
 \begin{entrylist}
-    \vspace{-12pt}    
+
     %------------------------------------------------
-    \entry{2016-Now}{Treasurer of AGR Dynamics' Company Union}{Company union at 
-    AGR Dynamics}{}
-    \vspace{-12pt}
+    \entry{2018-2021}{Board member of Company Union}{deCODE Genetics}{}\vspace{-9pt}
     %------------------------------------------------
-    \entry{2014-2015}{Treasurer of SALKA}{Company union at Valka ehf.}{}
-    \vspace{-12pt}    
+    \entry{2016}{Treasurer of Company Union}{AGR Dynamics}{}\vspace{-9pt}
+    %------------------------------------------------
+    \entry{2014-2015}{Treasurer of Company Union (Salka)}{Valka}{}\vspace{-9pt}
     %------------------------------------------------    
-    \entry{2011-2012}{Graduate student representative}{Science Committee in 
-        Engineering and Natural Sciences }{}
-    \vspace{-12pt}        
+    \entry{2011-2012}{Graduate student representative in Science Committee}{SENS, UI}{}\vspace{-9pt}
     %------------------------------------------------
-    \entry{2009-2011}{Treasurer of HERON}{Student union for postgraduates in 
-    Engineering and Natural Sciences }{}
-    \vspace{-12pt}    
+    \entry{2009-2011}{Treasurer of Student Union (Heron) for postgraduates}{SENS, UI }{}\vspace{-9pt}
     %------------------------------------------------
-    \entry{2011-2012}{Graduate student representative}{Science Committee in 
-    Engineering and Natural Sciences }{}
-    \vspace{-12pt}
+    \entry{2011-2012}{Graduate student representative in Science Committee}{SENS, UI }{}\vspace{-9pt}
     %------------------------------------------------
-    \entry{2009-2010}{Treasurer of BEST Reykjavik}{Reykjavik division for Board 
+    \entry{2009-2010}{Treasurer of BEST Reykjavik}{Board 
     of 
         European Students of Technology}{
-        Participated in the BEST General Assembly 2009 in Budapest, Hungary, on 
+        Participated in the BEST General Assembly on 
         behalf of BEST Reykjavik. \\
-        Helped organize two BEST academic courses on technology at the 
-        University of Iceland, where we housed and entertained roughly 20 
-        European students in engineering over a course of a week. 
+        Helped organize two BEST academic courses at 
+        UI, where we housed and entertained 20 
+        European students over a course of a week. 
         }
-    \vspace{-12pt}
     %------------------------------------------------
-    \entry{2006-2007}{President of STIGULL}{Student union for undergraduates in 
-        Mathematics and Physics }{}
-    \vspace{-12pt}    
+    \entry{2006-2007}{President of Student union (Stigull) for undergraduates in Mathematics and Physics}{SENS, UI}{}
     %------------------------------------------------
 \end{entrylist}
-
-\section{interests}
-%-------------------------------------------------------------------------------
-%	INTERESTS SECTION
-%-------------------------------------------------------------------------------
-{\boldfont professional:} heuristics, artificial intelligence, evolutionary 
-computation, global optimisation, statistical learning, machine learning,  real 
-world applications 
-
-{\boldfont personal:} knitting, sewing, general arts and crafts, occasional 
-French lessons, internet cats
 
 \clearpage
 \section{publications}
@@ -408,15 +404,12 @@ French lessons, internet cats
 \href{https://www.researchgate.net/profile/Helga_Ingimundardottir}{{\boldfont 
 Research Gate}}}
 \nocite{*}
-\vspace{-6pt} % in order for publications fit on one page
 
 %\printbibliography[type=misc, title={asdf}, heading=subbibliography]
 
-\printbibsection{article}{article in peer-reviewed journals} % Print all 
-%articles from the bibliography
+\printbibsection{article}{article in peer-reviewed journals} 
 
-\printbibsection{book}{thesis} % Print all books from the bibliography
-
+\printbibsection{book}{thesis} 
 \printbibsection{inproceedings}{international peer-reviewed conferences/proceedings} % Print all articles from the bibliography
 %\begin{refsection} % This is a custom heading for those references marked as 
 %%"inproceedings" but not containing "keyword=france"
@@ -424,10 +417,8 @@ Research Gate}}}
 %\printbibliography[type=inproceedings, title={international peer-reviewed conferences/proceedings}, notkeyword={france}, heading=subbibliography]
 %\end{refsection}
 
-% This is a custom heading for those references marked as "inproceedings" and containing "keyword=france"
 \printbibliography[type=misc, title={seminars}, heading=subbibliography]
 
-%\printbibsection{report}{research reports} % Print all research reports from the bibliography
 
 %-------------------------------------------------------------------------------
 
