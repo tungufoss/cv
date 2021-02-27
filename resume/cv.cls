@@ -26,6 +26,9 @@
 \newcommand*{\emailsymbol}{\marvosymbol{66}~}
 \newcommand*{\homepagesymbol}{{\Large\marvosymbol{205}}~}
 
+\usepackage{academicons}
+\newcommand{\orcid}[1]{\href{https://orcid.org/#1}{\textcolor[HTML]{A6CE39}{\aiOrcid #1}}}
+
 % elements
 \newcommand*{\firstname}[1]{\def\@firstname{#1}}
 \newcommand*{\familyname}[1]{\def\@familyname{#1}}
@@ -33,6 +36,8 @@
 \newcommand*{\mobile}[1]{\faMobilePhone~{#1}}
 \newcommand*{\fax}[1]{\faxsymbol~{#1}}
 \newcommand*{\phone}[1]{\faPhone~{#1}}
+
+
 \newcommand*{\github}[1]{\faGithub~\href{https://github.com/#1}{#1}}
 \newcommand*{\email}[1]{\emailsymbol~\href{mailto:{#1}}{#1}}
 \newcommand*{\homepage}[2]{\homepagesymbol~\href{#1}{#2}}
@@ -85,13 +90,13 @@
 %\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 %\setmathfont{XITS Math}
 
-\newfontfamily\bodyfont[]{Arno Pro} %Helvetica Neue
-\newfontfamily\thinfont[]{Arno Pro Italic} %Helvetica Neue UltraLight
-\newfontfamily\headingfont[]{Arno Pro Caption} %Helvetica Neue Condensed Bold
-\newfontfamily\boldfont[]{Arno Pro Bold} %Helvetica Neue UltraLight
+\newfontfamily\bodyfont[]{Georgia} %Helvetica Neue
+\newfontfamily\thinfont[]{Georgia Italic} %Helvetica Neue UltraLight
+\newfontfamily\headingfont[]{Georgia} %Helvetica Neue Condensed Bold
+\newfontfamily\boldfont[]{Georgia Bold} %Helvetica Neue UltraLight
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Arno Pro} %Helvetica Neue Light
+\setmainfont[Mapping=tex-text, Color=textcolor]{Georgia} %Helvetica Neue Light
 
 \usepackage{fontawesome}
 
@@ -183,15 +188,16 @@
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-    #4\vspace{4\parsep}%
+    #4\vspace{1.5\parsep}%
   }\\}
 
 \newcommand{\entryaside}[2]{%
-  \parbox[t]{3.6cm}{\flushright
+  \parbox[t]{4.1cm}{\flushright
   	{\footnotesize\addfontfeature{Color=lightgray} \lowercase{#1}}:~
   	#2
   }
   }
+
 
 %%%%%%%%%%%%%%
 % Side block %
@@ -205,7 +211,7 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.6}(1.5, 4.33)
+  \begin{textblock}{4.1}(1.5, 4.33)
   \begin{flushright}
   \obeycr
 }{%
@@ -214,13 +220,20 @@
   \end{textblock}
   \let\section\oldsection
 }
+\newcommand{\removeaside}{\addtolength{\hoffset}{-4.1cm}}
 
 %%%%%%%%%%%%%%%%
 % Bibliography %
 %%%%%%%%%%%%%%%%
+\newcommand{\printbibsection}[2]{%
+\begin{refsection}%
+    \newrefcontext[sorting=chronological]%
+    \nocite{*}%
+    \printbibliography[type={#1}, title={#2}, heading=subbibliography]%
+\end{refsection}}
 
-\RequirePackage[style=verbose, maxnames=99, sorting=ydnt]{biblatex}
 
+\RequirePackage[style=verbose, maxnames=99, sorting=ydnt, backend=biber]{biblatex}
 
 \DeclareFieldFormat[article]{title}{#1\par}
 \DeclareFieldFormat[book]{title}{#1\par}
@@ -299,9 +312,9 @@
     \printfield{location}%
     \setunit*{\addcomma\space}%
     \printfield{note}%            
-    \setunit{\space}%
+    \setunit{.\space}%
     \printfield{month}%            
-    \setunit{\addcomma\space}%
+    \setunit{\space}%
     \printfield{year}%
     \setunit{\addcomma\space}%
     \newunit%
@@ -331,14 +344,20 @@
 
 \DeclareNameFormat{author}{%
   \small\addfontfeature{Color=lightgray}%
-  \ifblank{#3}{}{#3\space}#1%
-  \ifthenelse{\value{listcount}<\value{liststop}}
-    {\addcomma\space}
-    {}%
-}
+  \ifgiveninits
+    {\usebibmacro{name:given-family}
+      {\namepartfamily}
+      {\namepartgiveni}
+      {\namepartprefix}
+      {\namepartsuffix}}
+    {\usebibmacro{name:given-family}
+      {\namepartfamily}
+      {\namepartgiven}
+      {\namepartprefix}
+      {\namepartsuffix}}%
+  \usebibmacro{name:andothers}}
 
-
-\DeclareSortingScheme{chronological}{
+\DeclareSortingTemplate{chronological}{
   \sort[direction=descending]{\field{year}}
   \sort[direction=descending]{\field{month}}
 }
