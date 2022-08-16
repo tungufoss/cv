@@ -12,7 +12,7 @@
 %-------------------------------------------------------------------------------
 %                overall design commands definitions
 %-------------------------------------------------------------------------------
-
+\usepackage{fontawesome}
 % MarVoSym font for symbols
 %\RequirePackage{marvosym}
 \newcommand*{\marvosymbol}[1]{}
@@ -37,13 +37,12 @@
 \newcommand*{\fax}[1]{\faxsymbol~{#1}}
 \newcommand*{\phone}[1]{\faPhone~{#1}}
 
-
 \newcommand*{\github}[1]{\faGithub~\href{https://github.com/#1}{#1}}
 \newcommand*{\email}[1]{\emailsymbol~\href{mailto:{#1}}{#1}}
 \newcommand*{\homepage}[2]{\homepagesymbol~\href{#1}{#2}}
-\newcommand*{\twitter}[1]{\faTwitterSign~\href{https://twitter.com/#1}{#1}}
-\newcommand*{\facebook}[1]{\faFacebookSign~\href{https://facebook.com/#1}{#1}}
-\newcommand*{\linkedin}[1]{\faLinkedinSign~\href{https://www.linkedin.com/in/#1}{#1}}
+\newcommand*{\twitter}[1]{\faTwitter~\href{https://twitter.com/#1}{#1}}
+\newcommand*{\facebook}[1]{\faFacebook~\href{https://facebook.com/#1}{#1}}
+\newcommand*{\linkedin}[1]{\faLinkedin~\href{https://www.linkedin.com/in/#1}{#1}}
 %%%%%%%%%%
 % Colors %
 %%%%%%%%%%
@@ -97,8 +96,6 @@
 
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont[Mapping=tex-text, Color=textcolor]{Georgia} %Helvetica Neue Light
-
-\usepackage{fontawesome}
 
 %%%%%%%%%%
 % Header %
