@@ -82,10 +82,11 @@
 
 \RequirePackage{fontspec,xltxtra}
 
-\newfontfamily\bodyfont[]{Arno Pro} %Helvetica Neue
-\newfontfamily\thinfont[]{Arno Pro Italic} %Helvetica Neue UltraLight
-\newfontfamily\headingfont[]{Arno Pro Caption} %Helvetica Neue Condensed Bold
-\newfontfamily\boldfont[]{Arno Pro Bold} %Helvetica Neue UltraLight
+
+\newfontfamily\bodyfont[]{Georgia} %Helvetica Neue
+\newfontfamily\thinfont[]{Georgia Italic} %Helvetica Neue UltraLight
+\newfontfamily\headingfont[]{Georgia} %Helvetica Neue Condensed Bold
+\newfontfamily\boldfont[]{Georgia Bold} %Helvetica Neue UltraLight
 
 \usepackage{fontawesome}
 
@@ -96,17 +97,17 @@
 \RequirePackage{tikz}
 
 \newcommand{\myheader}{
-
+	
 	\begin{tikzpicture}[remember picture,overlay]
-	\node [rectangle, fill=fillheader, anchor=north, minimum width=2\paperwidth, minimum height=4cm] (box) at (current page.north){};
-	\node [anchor=center] (name) at (box) {%
-		\fontsize{40pt}{72pt}\color{header}%
-		{\boldfont \@firstName}\quad{\bodyfont  \@lastName}
-	};
-	\node [anchor=north] at (name.south) {%
-		\fontsize{14pt}{24pt}\color{header}%
-		\thinfont \@workTitle%
-	};
+		\node [rectangle, fill=fillheader, anchor=north, minimum width=2\paperwidth, minimum height=4cm] (box) at (current page.north){};
+		\node [anchor=center] (name) at (box) {%
+			\fontsize{40pt}{72pt}\color{header}%
+			{\boldfont \@firstName}\quad{\bodyfont  \@lastName}
+		};
+		\node [anchor=north] at (name.south) {%
+			\fontsize{14pt}{24pt}\color{header}%
+			\thinfont \@workTitle%
+		};
 	\end{tikzpicture}
 }
 
@@ -155,17 +156,17 @@
 	{\@nameto \\ \@addrto}
 	
 	\opening{\@greetto}
-
-    #1	
-    
-    \vfill
+	
+	#1	
+	
+	\vfill
 	\closing{\@closeline}
 	\vfill
 	
-%	\ps	
-%	P.S. #2 
-%	\encl{#3}
-		
+	%	\ps	
+	%	P.S. #2 
+	%	\encl{#3}
+	
 \end{letter}}
 %----------------------------------------------------------------------------------------
 
