@@ -85,17 +85,17 @@
 % Fonts %
 %%%%%%%%%
 
-\RequirePackage[quiet]{fontspec}
+%\RequirePackage[quiet]{fontspec}
 %\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 %\setmathfont{XITS Math}
 
-\newfontfamily\bodyfont[]{Georgia} %Helvetica Neue
-\newfontfamily\thinfont[]{Georgia Italic} %Helvetica Neue UltraLight
-\newfontfamily\headingfont[]{Georgia} %Helvetica Neue Condensed Bold
-\newfontfamily\boldfont[]{Georgia Bold} %Helvetica Neue UltraLight
+\newfontfamily\boldfont[]{CMU Typewriter Text Bold} %Helvetica Neue UltraLight
+\newfontfamily\bodyfont[]{CMU Typewriter Text Variable Width} %Helvetica Neue
+\newfontfamily\thinfont[]{CMU Serif} %Helvetica Neue UltraLight
+\newfontfamily\headingfont[]{CMU Concrete} %Helvetica Neue Condensed Bold
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Georgia} %Helvetica Neue Light
+\setmainfont[Mapping=tex-text, Color=textcolor]{CMU Bright} %Helvetica Neue Light
 
 %%%%%%%%%%
 % Header %
@@ -359,7 +359,7 @@
   \sort[direction=descending]{\field{month}}
 }
 
-\newcommand{\printbibsection}[2]{
+\renewcommand{\printbibsection}[2]{
   %\begin{refsection}
     \nocite{*}
     \printbibliography[type={#1}, title={#2}, heading=subbibliography]
