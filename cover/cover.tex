@@ -19,15 +19,16 @@
 \documentclass{cover} 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[icelandic]{babel}
+\usepackage[english]{babel}
+
+\usepackage{biblatex}
+\addbibresource{references.bib}
 
 
 \usepackage{lipsum}
 %----------------------------------------------------------------------------------------
 %	YOUR NAME AND CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
-
-%\header{helga}{ingimundardottir}{computational engineer} % Your name and current job title/field
 
 \signature{Helga Ingimundardóttir}
 \addrfrom{Kinnargata 6\\ % Address
@@ -40,56 +41,71 @@
 %	ADDRESSEE AND GREETING/CLOSING
 %----------------------------------------------------------------------------------------
 
-\greetto{\textbf{Subject: Data Engineer}} % Greeting text
+\greetto{Dear Hiring Committee,} % Greeting text
 \closeline{Sincerely,} % Closing text
 
-\nameto{} % Addressee of the letter above the to address
+\nameto{University of Iceland} % Addressee of the letter above the to address
 
 \addrto{
-	Human Resources\\ % To address
-	XXX 
+Sæmundargata 2\\
+102 Reykjavík
 }	
 %----------------------------------------------------------------------------------------
 \pagestyle{plain}
-\firstName{helga}
-\lastName{ingimundard\'{o}ttir}
-\workTitle{computational engineer}	
+\firstName{Dr. Helga}
+\lastName{Ingimundard\'{o}ttir}
+\workTitle{Ph.D. in Computational Engineering}	
 
 \usepackage{url}
 \begin{document}
 	
-	\myletter{	
-		%----------------------------------------------------------------------------------------
-		%	LETTER CONTENT
-		%----------------------------------------------------------------------------------------
-		My name is Helga Ingimundardóttir, and I have a PhD in computational engineering with over 10 years work experience in software development, research and data science.
+\myletter{	
+I am writing to express my interest in the \textit{Assistant Professor in Industrial Engineering position} at the University of Iceland. 
+As an Icelandic native speaker, I am confident that my language skills, combined with my educational and research background, and my overall skill set perfectly align with the needs of the department.
 		
-		My doctorate was on hyperheuristcs under the guidance of Prof. Tomas Philip Runarsson at the University of Iceland. The main focus of the study is on Job Shop Scheduling Problems and how to automate the scheduling 
-		process using e.g. ordinal regression. Moreover, I inspected ``problem difficulty'' and ``algorithm's footprints in instance space'' -- meaning I investigated how changing assumptions on input data effected algorithmic performance. Moreover, I investigated where in the sequential decision making was the most beneficial effect for efficient learning, in particular using imitation learning (a type of reinforcement learning approach).
-		
-		Alongside my PhD studies I was a full-time C\# software developer for the start-up Valka (now joined under Marel), where I developed an algorithm for their water-jet cutting machine based on the user's perference on cut patterns, whilst minimizing pinbone (and other outlying bones) and maximizing high-valued portions for various types of white fish.
-		
-		I later joined AGR Dynamics for a year, where I was a SQL consultant and gained real work experience using MSSQL, a trait that has been quite beneficial in my career. I didn't want to pursue a career in consulting, so once I had defended my PhD, I changed careers back into full-time research at deCODE Genetics. I was at deCODE for about 5 years, where I was in charge of implementing and maintaining the Oxford Nanopore Technologies long range sequencing analysis pipeline.
-		I worked closely with the lab department in deciding the protocol from LIMS to work with the downstream analysis. Along with collaborating with the ITO in making necessary changes to our cluster and disk architecture in order to process the exuberant amount of data (roughly 6 petabyte over past three years) in an efficient manner, in terms of computational cost (cpu and gpu hours) and most importantly assuring data integrity.
-		
-		For the past year I've been a data scientist at CCP Games, although technically under the data analytics department, my daily work was mostly with the data engineering team as my expertise is mid-way on that DA/DE spectrum.
-		I worked on a recommendation engine service for new characters playing in EVE Online, using their in-game behavior. This involved developing new real-time time-series features using information from proto-events from either redis or kafka streams. Feature engineering used TimescaleDB extension for pgSQL functions. Moreover, I developed ad-hoc metrics to quantify content quality and engagement to these new recommendation models.
+I hold a Ph.D. in Computational Engineering from the Industrial Engineering, Mechanical Engineering, and Computer Science department at the University of Iceland. My dissertation, titled \citetitle{PhD}, which I defended in the summer of 2016, focuses on performance analysis and preference learning, using job shop scheduling as a case study. It also explores creating simple and easy-to-use practical frameworks using data-driven insights. The dissertation's major area of study is the interplay between problem instances and the proposed algorithm's performance, specifically how variations in problem instances can affect algorithm performance. Understanding this relationship is crucial for accurately comparing different approaches and ensuring meaningful comparisons are made.
 
-		I hope you will consider my application and see an opportunity for an employee with my academic background and diverse work experience as a strong team member on your team.			
-		
-	}{}{}
+I have published several papers based on this work, including the most prominent ones: \cite{isda11,InRu14,Ingimundardottir2018}, and \cite{InRu15a}. The latter was even nominated for the Best Paper Award at the Learning and Intelligent Optimization conference series in 2015. I conducted the research and wrote the papers under the guidance of my thesis advisor and co-author, Prof. Tómas Philip Rúnarsson.
+
+During my master's program in Computational Engineering at the University of Iceland, I had the opportunity to study abroad as an exchange student for a semester at the University of Valenciennes. While there, I conducted my master's project under the guidance of Prof. Sylvain Lalot. Together, we co-wrote a journal publication titled \citetitle{fouling} based on my research findings. I was also fortunate enough to receive a grant from the French Embassy to participate in this exchange program.
+
+I participated in large-scale research projects while at deCODE genetics from 2016-2020, where I was responsible for implementing and maintaining the Oxford Nanopore Technologies (ONT) long-range sequencing analysis pipeline. Working closely with the lab department, I helped decide on protocols and collaborated with the ITO to make necessary changes to cluster and disk architecture, ensuring efficient processing of the large amount of data (6 petabytes over 3 years) while maintaining data integrity. My contributions were integral to the productionalization of the massive dataset and running calculations needed for the research projects published in leading journals on genetics, including \cite{decodeBeyter} as second author and \cite{Holley2021} as third author. I primarily worked on the supplementary associated with those articles and actively aided the principal investigators during the research phase.
+
+
+Here is a list of selected publications that showcase my research expertise and contributions to the field (as described above):
+\printbibliography[heading=none]
+
+
+Apart from my academic research, I have gained valuable experience in various Icelandic industries. As a computational engineer at Valka, I contributed to the development of generalized fish bone detection algorithms and singlehandedly designed and implemented intelligent fish portioning algorithms for multiple species with fast and accurate calculations.
+
+In addition, as an SQL consultant for AGR Dynamics, I provided customized solutions to meet individual customer needs, implementing data and maintaining databases, and developing custom SQL solutions for specific customer requirements in AGR 5, a web-based supply chain management system.
+I also served on the advisory board for grant applications to the Technology Development Fund at RANNIS in 2015 and have resumed my role as a board member in 2023. As a data scientist at CCP Games, I played a leading role in the development of a recommendation engine service for new characters in EVE Online while working for their data department. My responsibilities included creating real-time time-series features based on event logs for feature engineering.
+
+Lastly, at Travelshift, as Head of AI Research, I lead a team of AI consultants on a project that involves optimizing travel plans for vacation packages offered on \href{https://guidetoeurope.com/best-vacation-packages}{GuideToEurope.com} using data-driven approaches. I am responsible for designing and implementing AI algorithms, analyzing data, collaborating with other teams, and staying up-to-date with the latest research trends and advancements in AI technology.
+
+Throughout my career, I have gained extensive experience in various industries and companies, such as CCP Games, Travelshift, and Valka, working in areas such as business intelligence, data analysis, and software development. However, I have come to realize that my true passion lies in teaching and research. Recently, during the spring semester of 2023, I had the opportunity to teach business intelligence, which reignited my desire to engage with students and share my findings with the wider community.
+
+My belief in sharing knowledge and engaging in discourse in my field was reinforced when I worked at Travelshift, where their strict enforcement of NDAs and lack of opportunities to share results outside of patent applications goes against my values. Therefore, I am eager to pursue a career in an open platform where I can freely share my research findings and contribute to the advancement of the field.
+
+In my spare time, I enjoy the creative pursuits of bespoke dressmaking and knitting. While indulging in these hobbies, I often find myself approaching them as optimization problems. However, since these are not typically considered significant business cases, they are often overlooked in research. I believe these hobbies can serve as perfect examples for trying out new research methods and gaining public appeal by contextualizing familiar activities with known buzzwords in the field. Moreover, if needed, these optimization problems can be expanded to a more general business case. For instance, the research problem of dress cutting is essentially the same as cutting steel plates for large manufacturing industries.
+
+
+Furthermore, I am excited about the proposed collaboration with the Medicine faculty on the \textit{Blóðskimun til bjargar} national health initiative. This opportunity aligns with my long-term goal of contributing to the betterment of society through the use of data and technology. I am confident that my expertise in Industrial Engineering, coupled with my experience in data analysis and software development, will enable me to make meaningful contributions to the project.
+
+Please see the enclosed Research and Teaching Plan for more details on my proposed research and teaching goals.
+
+
+For more information about my work experience and references, please feel free to contact Tómas Philip Rúnarsson (\email{tpr@hi.is}), my Ph.D. advisor; Guðrún Geirsdóttir (\email{gudgeirs@hi.is}), who mentored me during my teaching studies for higher education; and Valþór Druzin Halldórsson (\email{valthor@ccpgames.com}), my supervisor during my time as a Data Scientist at CCP Games. These individuals can provide further insights into my professional capabilities.
+
+
+I am excited about the opportunity to contribute to the department's efforts in addressing the challenges of the fourth industrial revolution. With my expertise in the field of Industrial Engineering, I am confident that I can make significant contributions to the development of learning and teaching in this area.
+Thank you for considering my application. I look forward to discussing my qualifications further in an interview.
+
+}{
+Certificates of Education\\
+Curriculum Vitae with a complete list of publications and all scholarly work conducted\\
+Outline of proposed research and teaching plans}
+
+
 \end{document}
 
-Ég heiti Helga Ingimundardóttir og er doktor í reikniverkfræði með yfir 10 ára starfsreynslu í hugbúnaðarþróun, rannsóknum og gagnaúrvinnslu. 				
-
-Ég byrjaði starfsferil minn sem sumarstarfsmaður hjá Landsbankanum 2007-2009: fyrst hjá notendaþjónustunni, síðar gjaldeyris-, afleiðumiðlun og skuldastýring (GASið) og síðast prófanir. Þar kynntist ég bankaumhverfinu og líkaði vel, en ákvað að snúa mér aftur alfarið að akademíu.
-
-Ég vann að doktorsverkefni í reikniverkfræði hjá Háskóla Íslands 2009-2016 og var þar að rýna  aðferðafræði í reiknigreind og undirstöður gagnagreiningar fyrir mismunandi lærdóms reiknirit, með megináherslu á hvar og hvenær er best að leggja mestan þungan á lærdóm fyrir góðan árangur í vélnámi. 
-
-Samhliða doktorsnáminu mínu vann ég í hugbúnaðarþróun hjá nýsköpunarfyrirtækinu Völku (nú sameinað Marel), þar sem áherslan var að þróa hátækni skurðarvél fyrir fiskvinnslu. Starfið fólst í rannsóknum (með tilheyrandi skýrslugerð til RANNÍS) og tæknilegri útfærslu í hugbúnað vinnslulínurnar. Hjá Völku lærði ég að hugsa út fyrir kassann og prófa mig áfram með að beita brjóstvitsaðferðum til að finna nýjar lausnir á verkefnum.
-
-Ég færði mig síðar til AGR Dynamics sem SQL ráðgjafi í rúmt ár. Þar lærði ég mjög mikilvægt veganesti, sem var góð SQL færni sem ég bý enn að, en stutt ráðgjafa verkefni þótti mér ekki nógu krefjandi og leitaði því aftur í rannsóknir. Ég var hjá Íslenskri erfðagreiningu í raðgreiningarteymi þeirra í rúm 5 ár. Þar var ég að sinna samþættingu rannsókna og gagnareksturs, þar sem starf mitt varð meira í átt að devOps en upphaflega stóð til. Ég lærði að verða mjög öguð á ferlana mína og skjölun þeirra, þannig hægt væri að rekja rannsóknarniðurstöður nákvæmlega í hvaða forrit og tól voru notuð, með hvaða fyrirframgefnum stikum, hrágögnum, forsendum o.s.frv.
-
-Undanfarið ár hef ég verið hjá CCP Games og sinnt gagnagreiningu og innleiðingu nýs gagnagrunns rauntímagagna með næstum-rauntíma úrvinnslu sem talar beint við EVE online tölvuleikinn -- virkni sem þurfti að vinna algjörlega frá grunni. Markmiðið var að greina nýja leikmenn, spá fyrir hvers konar leikja-persónuleika þeir hefðu og koma með ráðleggingar um verkefni sem þau gætu tekist á við til að læra betur á leikinn. Fyrir þetta \textit{recommendation service} þurfti að búa til ótal nýja data features sem tímaraðir sem ég bar ábyrgð á að skilgreina og útfæra. 
-
-Ég vona að þið takið umsókn mína til skoðunar og sjáið tækifæri fyrir starfsmann með minn akademíska bakgrunn og fjölbreytta starfsreynslu sem sterkan liðsmann í ykkar hóp. 
