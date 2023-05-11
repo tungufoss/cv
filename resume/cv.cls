@@ -237,15 +237,23 @@
 \end{refsection}}
 
 \RequirePackage[style=verbose, maxnames=99, sorting=ydnt, backend=biber]{biblatex}
-\usepackage{etoolbox}
-\patchcmd{\thebibliography}{\rightmargin}{1in}{}{}
-\setlength{\bibitemsep}{\itemsep}
-
 \DeclareFieldFormat[article]{title}{#1\par}
 \DeclareFieldFormat[book]{title}{#1\par}
 \DeclareFieldFormat[inproceedings]{title}{#1\par}
-\DeclareFieldFormat[misc]{title}{#1\par}
+\DeclareFieldFormat[incollection]{title}{#1\par}
+\DeclareFieldFormat[seminar]{title}{#1\par}
 \DeclareFieldFormat[report]{title}{#1\par}
+
+\newbibmacro*{doi+url}{%
+	\iffieldundef{isbn}
+	{}
+	{\printfield{isbn}\addperiod\space}%
+	\iffieldundef{doi}
+	{\iffieldundef{url}
+		{}
+		{\printfield{url}\addperiod\space}}
+	{\printfield{doi}\addperiod\space}}
+
 
 \DeclareBibliographyDriver{article}{%
   \printfield{title}%
@@ -254,97 +262,107 @@
   \par%
   \newblock%
   {%
-    \small\addfontfeature{Color=lightgray}\itshape%
-    \usebibmacro{journal+issuetitle}%
-    \setunit{\space}%
+    \small\addfontfeature{Color=lightgray}%
+    In: \usebibmacro{journal+issuetitle}%
+    \setunit{\addcomma\space}%
     \printfield{pages}%
     \newunit%
     \printlist{publisher}%
     \setunit*{\addcomma\space}%
-    \printfield{year}%
-    \newunit%
+    \printfield{year}\addperiod
+    \par
+    \usebibmacro{doi+url}
   }
   \par\vspace{0.3\baselineskip}
 }
 
 \DeclareBibliographyDriver{book}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \small\addfontfeature{Color=lightgray}\itshape%
-    \printfield{note}%
-    \setunit*{\addcomma\space}%
-    \printlist{publisher}%
-    \setunit*{\addcomma\space}%
-    \printfield{year}%
-    \setunit{\addcomma\space}%
-    \printlist{location}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
+	\printfield{title}%
+	\newblock%
+	\printnames{author}%
+	\par%
+	\newblock%
+	{%
+		\addfontfeature{Color=lightgray}{\itshape\printfield{note}}%
+		\setunit{\addcomma\space}
+		\printfield{pages}\newunit
+		\printlist{publisher}%
+		\setunit*{\addcomma\space}%
+		\printfield{year}%
+		\setunit{\addcomma\space}%
+		\printlist{location}\addperiod
+		\par
+		\usebibmacro{doi+url}
+	}
+	\newblock
+	\par\vspace{0.3\baselineskip}
 }
 
 \DeclareBibliographyDriver{inproceedings}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \small\addfontfeature{Color=lightgray}%
-    \printfield{booktitle}%
-    \setunit{\addcomma\space}%
-    \printfield{year}%
-    \setunit{\addcomma\space}%
-    \printlist{location}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
+	\printfield{title}%
+	\newblock%
+	\printnames{author}%
+	\par%
+	\newblock%
+	{%
+		\small\addfontfeature{Color=lightgray}%
+		In: \printfield{booktitle}%
+		\setunit{\addcomma\space}%
+		\usebibmacro{byeditor+others}
+		\setunit{\addcomma\space}%
+		\printfield{pages}%
+		\newunit%
+		\printlist{publisher}%
+		\setunit*{\addcomma\space}%
+		\printfield{year}\addperiod
+		\par
+		\usebibmacro{doi+url}
+	}
+	\par\vspace{0.3\baselineskip}
 }
 
-\DeclareBibliographyDriver{misc}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \small\addfontfeature{Color=lightgray}\itshape%
-  	\printfield{howpublished}
-    \setunit*{\addcomma\space}%
-    \printfield{location}%
-    \setunit*{\addcomma\space}%
-    \printfield{note}%            
-    \setunit{.\space}%
-    \printfield{month}%            
-    \setunit{\space}%
-    \printfield{year}%
-    \setunit{\addcomma\space}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
+\DeclareBibliographyDriver{incollection}{%
+	\printfield{title}%
+	\par
+	\newblock%
+	\printnames{author}%
+	\par%
+	\newblock%
+	{%
+		\small\addfontfeature{Color=lightgray}%
+		In: \printfield{booktitle}%
+		\setunit{\addcomma\space}%
+		\usebibmacro{byeditor+others}
+		\setunit{\addcomma\space}%
+		\printfield{pages}%
+		\newunit%
+		\printlist{publisher}%
+		\setunit*{\addcomma\space}%
+		\printfield{year}\addperiod
+		\par
+		\usebibmacro{doi+url}
+	}
+	\par\vspace{0.3\baselineskip}
 }
 
-\DeclareBibliographyDriver{report}{%
-  \printfield{title}%
-  \newblock%
-  \printnames{author}%
-  \par%
-  \newblock%
-  {%
-    \small\addfontfeature{Color=lightgray}\itshape%
-    \printfield{type}%
-    \setunit{\space}%
-    \printfield{number}%
-    \setunit{\addcomma\space}%
-    \printfield{year}%
-    \newunit%
-  }
-  \par\vspace{0.3\baselineskip}
+\DeclareBibliographyDriver{seminar}{%
+	\printfield{title}%
+	\newblock%
+	\printnames{author}%
+	\par%
+	\newblock%
+	{%
+		\small\addfontfeature{Color=lightgray}%
+		\printfield{howpublished}\space 
+		at\space\printlist{location}\space in\space 
+		\printfield{month}\space\printfield{year}%
+		\par%
+		\usebibmacro{doi+url}%
+	}%
+	\par\vspace{0.3\baselineskip}%
 }
+
+
 
 \DeclareNameFormat{author}{%
   \small\addfontfeature{Color=lightgray}%
