@@ -238,6 +238,7 @@
 
 \RequirePackage[style=verbose, maxnames=99, sorting=ydnt, backend=biber]{biblatex}
 \DeclareFieldFormat[article]{title}{#1\par}
+\DeclareFieldFormat[foreignarticle]{title}{#1\par}
 \DeclareFieldFormat[book]{title}{#1\par}
 \DeclareFieldFormat[inproceedings]{title}{#1\par}
 \DeclareFieldFormat[incollection]{title}{#1\par}
@@ -253,7 +254,6 @@
 		{}
 		{\printfield{url}\addperiod\space}}
 	{\printfield{doi}\addperiod\space}}
-
 
 \DeclareBibliographyDriver{article}{%
   \printfield{title}%
@@ -275,6 +275,29 @@
   }
   \par\vspace{0.3\baselineskip}
 }
+
+\DeclareBibliographyDriver{foreignarticle}{%
+	\printfield{title}%
+	\newblock%
+	\printnames{author}%
+	\par%
+	\newblock%
+	{%
+		\small\addfontfeature{Color=lightgray}%
+		In: \usebibmacro{journal+issuetitle}%
+		\setunit{\addcomma\space}%
+		\printfield{pages}
+		\newunit%
+		\printlist{publisher}%
+		\setunit*{\addcomma\space}%
+		\printfield{year}\addperiod
+		%
+		\par
+		\usebibmacro{doi+url}
+	}
+	\par\vspace{0.3\baselineskip}
+}
+
 
 \DeclareBibliographyDriver{book}{%
 	\printfield{title}%
