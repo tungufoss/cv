@@ -181,16 +181,8 @@
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 
-\newcommand{\tightentry}[4]{%
-	#1\;&\parbox[t]{11.8cm}{%
-		\textbf{#2}%
-		\hfill%
-		{\small\addfontfeature{Color=lightgray} #3}\\%
-		#4\vspace{1.5\parsep}%
-	}\\}
-
 \newcommand{\entry}[4]{%
-  #1\;&\parbox[t]{15.9cm}{%
+	\parbox[t]{42pt}{#1}&\parbox[t]{\dimexpr\textwidth-42pt\relax}{%
     \textbf{#2}%
     \hfill%
     {\small\addfontfeature{Color=lightgray} #3}\\%
@@ -199,7 +191,7 @@
 
 \newcommand{\entryaside}[2]{%
   \parbox[t]{4.1cm}{\flushright
-  	{\footnotesize\addfontfeature{Color=lightgray} \lowercase{#1}}:~
+  	{\small\addfontfeature{Color=lightgray} \lowercase{#1}}:~
   	#2
   }
   }
@@ -226,11 +218,17 @@
   \end{textblock}
   \let\section\oldsection
 }
-\newcommand{\removeaside}{\addtolength{\hoffset}{-4.1cm}}
+\newcommand{\removeaside}{
+\addtolength{\hoffset}{-4.1cm}
+\addtolength{\textwidth}{4.1cm}
+}
 
 %%%%%%%%%%%%%%%%
 % Bibliography %
 %%%%%%%%%%%%%%%%
+
+
+
 \newcommand{\printbibsection}[2]{%
 \begin{refsection}%
     \newrefcontext[sorting=chronological]%
@@ -238,8 +236,10 @@
     \printbibliography[type={#1}, title={#2}, heading=subbibliography]%
 \end{refsection}}
 
-
 \RequirePackage[style=verbose, maxnames=99, sorting=ydnt, backend=biber]{biblatex}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\rightmargin}{1in}{}{}
+\setlength{\bibitemsep}{\itemsep}
 
 \DeclareFieldFormat[article]{title}{#1\par}
 \DeclareFieldFormat[book]{title}{#1\par}
@@ -254,7 +254,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \small\addfontfeature{Color=lightgray}\itshape%
     \usebibmacro{journal+issuetitle}%
     \setunit{\space}%
     \printfield{pages}%
@@ -274,7 +274,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \small\addfontfeature{Color=lightgray}\itshape%
     \printfield{note}%
     \setunit*{\addcomma\space}%
     \printlist{publisher}%
@@ -294,7 +294,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}%
+    \small\addfontfeature{Color=lightgray}%
     \printfield{booktitle}%
     \setunit{\addcomma\space}%
     \printfield{year}%
@@ -312,7 +312,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \small\addfontfeature{Color=lightgray}\itshape%
   	\printfield{howpublished}
     \setunit*{\addcomma\space}%
     \printfield{location}%
@@ -325,8 +325,6 @@
     \setunit{\addcomma\space}%
     \newunit%
   }
-  
-  
   \par\vspace{0.3\baselineskip}
 }
 
@@ -337,7 +335,7 @@
   \par%
   \newblock%
   {%
-    \footnotesize\addfontfeature{Color=lightgray}\itshape%
+    \small\addfontfeature{Color=lightgray}\itshape%
     \printfield{type}%
     \setunit{\space}%
     \printfield{number}%
@@ -382,5 +380,5 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=6.1cm,top=2cm,right=2cm,bottom=2.5cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
