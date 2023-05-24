@@ -246,9 +246,15 @@
 \DeclareFieldFormat[report]{title}{#1\par}
 
 \newbibmacro*{doi+url}{%
+	% check of ieee cata log number
+	\iffieldundef{note}
+	{}
+	{\printtext{\printfield{note}}\addperiod\space}%
+	% check for isbn
 	\iffieldundef{isbn}
 	{}
 	{\printfield{isbn}\addperiod\space}%
+	% check for the DOI first, and if it doesn't exist, then check for the URL (never both)
 	\iffieldundef{doi}
 	{\iffieldundef{url}
 		{}
@@ -306,7 +312,7 @@
 	\par%
 	\newblock%
 	{%
-		\addfontfeature{Color=lightgray}{\itshape\printfield{note}}%
+		\addfontfeature{Color=lightgray}{\itshape\printfield{abstract}}%
 		\setunit{\addcomma\space}
 		\printfield{pages}\newunit
 		\printlist{publisher}%
