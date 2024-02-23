@@ -1,4 +1,4 @@
-\ProvidesClass{cv}[2012/04/30 CV class]
+\ProvidesClass{cv}[2023/10/31 CV class]
 \NeedsTeXFormat{LaTeX2e}
 
 \DeclareOption{print}{\def\@cv@print{}}
@@ -227,15 +227,6 @@
 % Bibliography %
 %%%%%%%%%%%%%%%%
 
-
-
-\newcommand{\printbibsection}[2]{%
-\begin{refsection}%
-    \newrefcontext[sorting=chronological]%
-    \nocite{*}%
-    \printbibliography[type={#1}, title={#2}, heading=subbibliography]%
-\end{refsection}}
-
 \RequirePackage[style=verbose, maxnames=99, sorting=ydnt, backend=biber]{biblatex}
 \DeclareFieldFormat[article]{title}{#1\par}
 \DeclareFieldFormat[foreignarticle]{title}{#1\par}
@@ -382,8 +373,8 @@
 	\newblock%
 	{%
 		\small\addfontfeature{Color=lightgray}%
-		\printfield{howpublished}\space 
-		at\space\printlist{location}\space in\space 
+		\printfield{howpublished}\space
+		at\space\printlist{location}\space in\space
 		\printfield{month}\space\printfield{year}%
 		\par%
 		\usebibmacro{doi+url}%
@@ -413,7 +404,7 @@
   \sort[direction=descending]{\field{month}}
 }
 
-\renewcommand{\printbibsection}[2]{
+\newcommand{\printbibsection}[2]{
   %\begin{refsection}
     \nocite{*}
     \printbibliography[type={#1}, title={#2}, heading=subbibliography]
