@@ -37,6 +37,8 @@
 \newcommand*{\fax}[1]{\faxsymbol~{#1}}
 \newcommand*{\phone}[1]{\faPhone~{#1}}
 
+
+\newcommand*{\kennitala}[1]{\faUser~#1}
 \newcommand*{\github}[1]{\faGithub~\href{https://github.com/#1}{#1}}
 \newcommand*{\email}[1]{\emailsymbol~\href{mailto:{#1}}{#1}}
 \newcommand*{\homepage}[2]{\homepagesymbol~\href{#1}{#2}}
